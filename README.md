@@ -1,5 +1,12 @@
 # Sistema de Integração e Avaliação de LLMs
 
+<p align="center">
+    <img src="https://img.shields.io/badge/python-3-green" alt="Python Badge" /> 
+    <img src="https://img.shields.io/badge/Versão-1.0.0-purple" alt="Versão">
+    <img src="https://img.shields.io/badge/Licença-MIT-green" alt="Licença">
+</p>
+
+
 ## Visão Geral
 
 Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, avaliar e apresentar resultados. A aplicação utiliza vários padrões de projeto, incluindo Factory, Command, Strategy e Observer, para oferecer uma experiência robusta, modular e amigável ao usuário.
@@ -78,6 +85,8 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 - **keyword_presence**: Avalia com base na presença de palavras-chave especificadas.
 
 ## Diagrama de Pacotes
+
+![diagrama_de_pacotes](./public/diagrama_de_pacotes.jpeg)
 
 ## Estrutura do Código
 
