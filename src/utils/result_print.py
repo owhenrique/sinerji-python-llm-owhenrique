@@ -1,3 +1,5 @@
+import textwrap
+
 def print_results(results):
     width = 80
 
@@ -11,12 +13,10 @@ def print_results(results):
         response_content = result['response']['content']
         score = result['score']
 
-        print("{:<20} {:<15} {:<50}".format(api_name, f"{score:.2f}", prompt))
+        print("{:<20} {:<15} {:<50}".format(api_name, f"{score:.1f}", prompt))
         print("-" * width)
         print("Response:")
-        print(response_content)
+        print(textwrap.fill(response_content, width=width))
         print("-" * width)
 
-    print("=" * width)
-    print("End of Results")
     print("=" * width)

@@ -3,7 +3,6 @@ import configparser
 import logging
 import os
 from dotenv import load_dotenv
-
 class CLI:
     def __init__(self):
         self.config = None

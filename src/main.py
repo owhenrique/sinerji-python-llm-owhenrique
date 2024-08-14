@@ -2,7 +2,7 @@ from user_interface.cli import CLI
 from user_interface.command import SendPromptCommand, Invoker
 from api_connection.api_gemini import GeminiFactory
 from api_connection.api_chatgpt import ChatGPTFactory
-from response_processing.strategies import WordCountStrategy, KeywordPresenceStrategy
+from response_processing.strategy import WordCountStrategy, KeywordPresenceStrategy
 from utils.result_print import print_results
 from results_presentation.observer import ResponseObserver, Subject
 

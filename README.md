@@ -8,19 +8,19 @@ Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, aval
 
 1. **Integração com APIs**:
    - Conecta-se ao ChatGPT e ao Gemini.
-   - Utiliza o padrão Factory para abstrair a criação de conexões com APIs.
+   - Utiliza o padrão [Factory](https://refactoring.guru/design-patterns/factory-method) para abstrair a criação de conexões com APIs.
 
 2. **Interface de Linha de Comando (CLI)**:
    - Permite aos usuários enviar perguntas para os modelos.
-   - Utiliza o padrão Command para encapsular solicitações.
+   - Utiliza o padrão [Command](https://refactoring.guru/design-patterns/command) para encapsular solicitações.
 
 3. **Processamento de Respostas**:
-   - Avalia respostas utilizando algoritmos baseados no padrão Strategy.
+   - Avalia respostas utilizando algoritmos baseados no padrão [Strategy](https://refactoring.guru/design-patterns/strategy).
    - Suporta diferentes estratégias de avaliação.
 
 4. **Apresentação dos Resultados**:
    - Exibe resultados com explicações.
-   - Utiliza o padrão Observer para notificar os usuários sobre mudanças.
+   - Utiliza o padrão [Observer](https://refactoring.guru/design-patterns/observer) para notificar os usuários sobre mudanças.
 
 ## Instalação
 
@@ -77,19 +77,15 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 - **word_count**: Avalia com base no número de palavras na resposta.
 - **keyword_presence**: Avalia com base na presença de palavras-chave especificadas.
 
+## Diagrama de Pacotes
+
 ## Estrutura do Código
 
 ### `api_connection/`  
 
-- `LLM_interface.py`: Define a interface abstrata para modelos de linguagem.
-- `factory.py`: Define a interface abstrata para modelos de linguagem e implementa métodos de fábrica para criar instâncias de LLM.
 - `api_chatgpt.py`: Contém a implementação para a API do ChatGPT.
 - `api_gemini.py`: Contém a implementação para a API do Gemini.
-
-### `user_interface/` 
-
-- `cli.py`: Gerencia a interface de linha de comando.
-- `command.py`: Define o método command contendo uma classe específica para executar comandos e outra para enviar um prompt a um LLM específico e avaliar a resposta.
+- `factory.py`: Define a interface abstrata para modelos de linguagem e implementa métodos de fábrica para criar instâncias de LLM.
 
 ### `response_processing/`
 
@@ -98,6 +94,11 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 
 ### `results_presentation/`
 - `observer.py`: Implementa o padrão Observer para notificação de resultados.
+
+### `user_interface/` 
+
+- `cli.py`: Gerencia a interface de linha de comando.
+- `command.py`: Define o método command contendo uma classe específica para executar comandos e outra para enviar um prompt a um LLM específico e avaliar a resposta.
 
 ### `utils/`
 - `result_print.py`: Possui uma função responsável por imprimir os resultados do prompt enviado pelo usuário. 
@@ -109,15 +110,7 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 1. **Executar testes**:
 
     ```bash
-    pytest
-    ```
-
-2. **Cobertura**:
-
-    Para verificar a cobertura do código, use:
-
-    ```bash
-    pytest --cov=src
+    pytest/diretório/arquivo_tests.py
     ```
 
 ## Contribuindo

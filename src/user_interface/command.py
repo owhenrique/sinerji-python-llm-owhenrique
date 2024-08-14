@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from api_connection.factory import LLMFactory
-from response_processing.evaluation_strategy import EvaluationStrategy
+from response_processing.strategy import EvaluationStrategy
 
 class Command(ABC):
     @abstractmethod
