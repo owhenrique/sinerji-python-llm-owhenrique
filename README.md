@@ -7,7 +7,7 @@ Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, aval
 ## Funcionalidades
 
 1. **Integração com APIs**:
-   - Conecta-se ao ChatGPT e a outro LLM (ex: Gemini).
+   - Conecta-se ao ChatGPT e ao Gemini.
    - Utiliza o padrão Factory para abstrair a criação de conexões com APIs.
 
 2. **Interface de Linha de Comando (CLI)**:
@@ -16,7 +16,7 @@ Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, aval
 
 3. **Processamento de Respostas**:
    - Avalia respostas utilizando algoritmos baseados no padrão Strategy.
-   - Suporta diferentes estratégias de avaliação (ex: contagem de palavras, presença de palavras-chave).
+   - Suporta diferentes estratégias de avaliação.
 
 4. **Apresentação dos Resultados**:
    - Exibe resultados com explicações.
@@ -27,15 +27,15 @@ Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, aval
 ### Pré-requisitos
 
 - Python 3.8+
-- Bibliotecas necessárias (veja `requirements.txt`)
+- Bibliotecas necessárias (veja [`requirements.txt`](./requirements.txt))
 
 ### Configuração
 
 1. **Clone o repositório**:
 
     ```bash
-    git clone https://github.com/owhenrique/llm-integration.git
-    cd llm-integration
+    git clone https://github.com/owhenrique/sinerji-python-llm-owhenrique
+    cd sinerji-python-llm-owhenrique
     ```
 
 2. **Instale as dependências**:
@@ -79,15 +79,29 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 
 ## Estrutura do Código
 
+### `api_connection/`  
+
 - `LLM_interface.py`: Define a interface abstrata para modelos de linguagem.
 - `LLM_factory.py`: Implementa métodos de fábrica para criar instâncias de LLM.
 - `api_chatgpt.py`: Contém a implementação para a API do ChatGPT.
 - `api_gemini.py`: Contém a implementação para a API do Gemini.
+
+### `cli/` 
+
 - `cli.py`: Gerencia a interface de linha de comando.
 - `command.py`: Define o método command contendo uma classe específica para executar comandos e outra para enviar um prompt a um LLM específico e avaliar a resposta.
+
+### `response_processing/`
+
 - `evaluation_strategies.py`: Define a interface de estratégias de avaliação.
 - `strategies`: Contém implementações específicas das estratégias de avaliação.
+
+### `results_presentation/`
 - `observer.py`: Implementa o padrão Observer para notificação de resultados.
+
+### `utils/`
+- `result_print.py`: Possui uma função responsável por imprimir os resultados do prompt enviado pelo usuário. 
+
 - `main.py`: O ponto de entrada da aplicação.
 
 ## Testes
