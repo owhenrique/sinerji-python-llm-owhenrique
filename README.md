@@ -142,4 +142,4 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a Licença MIT.
