@@ -82,11 +82,11 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 ### `api_connection/`  
 
 - `LLM_interface.py`: Define a interface abstrata para modelos de linguagem.
-- `LLM_factory.py`: Implementa métodos de fábrica para criar instâncias de LLM.
+- `factory.py`: Define a interface abstrata para modelos de linguagem e implementa métodos de fábrica para criar instâncias de LLM.
 - `api_chatgpt.py`: Contém a implementação para a API do ChatGPT.
 - `api_gemini.py`: Contém a implementação para a API do Gemini.
 
-### `cli/` 
+### `user_interface/` 
 
 - `cli.py`: Gerencia a interface de linha de comando.
 - `command.py`: Define o método command contendo uma classe específica para executar comandos e outra para enviar um prompt a um LLM específico e avaliar a resposta.
