@@ -8,7 +8,6 @@ class TestGeminiApi:
     @patch('google.generativeai.GenerativeModel')
     @patch('google.generativeai.configure')
     def test_successful_send_prompt(self, mock_configure, mock_model):
-        # Mock do modelo e da resposta
         mock_model_instance = MagicMock()
         mock_response = MagicMock()
         mock_response.text = "Test response"
@@ -25,7 +24,6 @@ class TestGeminiApi:
     @patch('google.generativeai.GenerativeModel')
     @patch('google.generativeai.configure')
     def test_failed_send_prompt(self, mock_configure, mock_model):
-        # Mock para simular uma exceção
         mock_model_instance = MagicMock()
         mock_model_instance.generate_content.side_effect = Exception("API error")
         mock_model.return_value = mock_model_instance
@@ -48,6 +46,5 @@ class TestGeminiFactory:
         assert api_instance.api_key == "fake-api-key"
 
     def test_failed_factory_method(self):
-        # Exemplo de falha quando a API key não é passada corretamente
         with pytest.raises(TypeError):
-            factory = GeminiFactory()  # Falha porque api_key é obrigatória
+            factory = GeminiFactory()

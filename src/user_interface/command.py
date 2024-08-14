@@ -8,9 +8,6 @@ class Command(ABC):
         pass
 
 class SendPromptCommand(Command):
-    """
-    Command para enviar um prompt a um LLM específico e avaliar a resposta.
-    """
     def __init__(self, api_name: str, llm_factory: LLMFactory, prompt: list, strategy: EvaluationStrategy):
         self.api_name = api_name
         self.llm_factory = llm_factory
@@ -25,10 +22,6 @@ class SendPromptCommand(Command):
 
 
 class Invoker:
-    """
-    O Invoker configura e executa os comandos. Pode também permitir o
-    encadeamento de comandos.
-    """
     def __init__(self):
         self._commands = []
 

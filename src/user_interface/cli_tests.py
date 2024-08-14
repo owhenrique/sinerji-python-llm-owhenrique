@@ -11,8 +11,7 @@ class TestCLI:
     def test_load_config(self, mock_file):
         cli = CLI()
         cli.load_config()
-        
-        # Verifique se a configuração foi lida corretamente
+
         assert cli.config.get("API_KEYS", "GEMINI_API_KEY") == "test_gemini_key"
         assert cli.config.get("API_KEYS", "CHATGPT_API_KEY") == "test_chatgpt_key"
 
