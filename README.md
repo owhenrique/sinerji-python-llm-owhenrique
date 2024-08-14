@@ -9,7 +9,7 @@
 
 ## Visão Geral
 
-Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, avaliar e apresentar resultados. A aplicação utiliza vários padrões de projeto, incluindo Factory, Command, Strategy e Observer, para oferecer uma experiência robusta, modular e amigável ao usuário.
+Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, avaliar e apresentar resultados.
 
 ## Funcionalidades
 
