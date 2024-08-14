@@ -84,9 +84,9 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 - `api_chatgpt.py`: Contém a implementação para a API do ChatGPT.
 - `api_gemini.py`: Contém a implementação para a API do Gemini.
 - `cli.py`: Gerencia a interface de linha de comando.
-- `command.py`:
-- `evaluation_strategy.py`:
-- `strategies.py`: Define estratégias de avaliação (padrão Strategy).
+- `command.py`: Define o método command contendo uma classe específica para executar comandos e outra para enviar um prompt a um LLM específico e avaliar a resposta.
+- `evaluation_strategies.py`: Define a interface de estratégias de avaliação.
+- `strategies`: Contém implementações específicas das estratégias de avaliação.
 - `observer.py`: Implementa o padrão Observer para notificação de resultados.
 - `main.py`: O ponto de entrada da aplicação.
 
