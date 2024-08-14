@@ -3,7 +3,6 @@ from unittest.mock import patch, MagicMock
 from api_connection.factory import LLMFactory
 from api_connection.api_chatgpt import ChatGPTApi, ChatGPTFactory
 
-
 class TestChatGPTApi:
     @patch('openai.OpenAI')
     def test_successful_send_prompt(self, mock_openai):

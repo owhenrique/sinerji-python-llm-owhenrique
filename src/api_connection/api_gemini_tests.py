@@ -4,7 +4,6 @@ from api_connection.factory import LLMFactory
 from api_connection.api_gemini import GeminiApi, GeminiFactory
 
 class TestGeminiApi:
-
     @patch('google.generativeai.GenerativeModel')
     @patch('google.generativeai.configure')
     def test_successful_send_prompt(self, mock_configure, mock_model):
@@ -37,7 +36,6 @@ class TestGeminiApi:
         assert str(exc_info.value) == "API error"
 
 class TestGeminiFactory:
-
     def test_successful_factory_method(self):
         factory = GeminiFactory(api_key="fake-api-key")
         api_instance = factory.factory_method()

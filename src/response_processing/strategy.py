@@ -5,11 +5,9 @@ class EvaluationStrategy(ABC):
     def evaluate(self, response: dict) -> float:
         pass
 
-
 class WordCountStrategy(EvaluationStrategy):
     def evaluate(self, response: dict) -> float:
         return len(response['content'].split())
-
 
 class KeywordPresenceStrategy(EvaluationStrategy):
     def __init__(self, keywords: list):

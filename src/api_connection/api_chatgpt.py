@@ -22,7 +22,6 @@ class ChatGPTApi(LLMInterface):
         message_content = [response.choices[0].message.content]
         return {"prompt": prompt[0]['content'], "content": message_content[0], "usage": response.usage}
 
-
 class ChatGPTFactory(LLMFactory):
     def __init__(self, api_key: str):
         self.api_key = api_key
