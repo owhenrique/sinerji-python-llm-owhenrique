@@ -1,5 +1,5 @@
-from cli.cli import CLI
-from cli.command import SendPromptCommand, Invoker
+from user_interface.cli import CLI
+from user_interface.command import SendPromptCommand, Invoker
 from api_connection.api_gemini import GeminiFactory
 from api_connection.api_chatgpt import ChatGPTFactory
 from response_processing.strategies import WordCountStrategy, KeywordPresenceStrategy

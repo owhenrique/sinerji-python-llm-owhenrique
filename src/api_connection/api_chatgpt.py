@@ -1,8 +1,7 @@
 import openai
-from .LLM_interface import LLM
-from .LLM_factory import LLMFactory
+from .factory import LLMInterface, LLMFactory
 
-class ChatGPTApi(LLM):
+class ChatGPTApi(LLMInterface):
     def __init__(self, api_key: str):
         self.api_key = api_key
         self.configure(api_key=api_key)
@@ -25,5 +24,5 @@ class ChatGPTFactory(LLMFactory):
     def __init__(self, api_key: str):
         self.api_key = api_key
 
-    def factory_method(self) -> LLM:
+    def factory_method(self) -> LLMInterface:
         return ChatGPTApi(self.api_key)

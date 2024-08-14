@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from api_connection.LLM_factory import LLMFactory
+from api_connection.factory import LLMFactory
 from response_processing.evaluation_strategy import EvaluationStrategy
 
 class Command(ABC):

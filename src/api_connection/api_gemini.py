@@ -1,8 +1,7 @@
 import google.generativeai as genai
-from .LLM_interface import LLM
-from .LLM_factory import LLMFactory
+from .factory import LLMInterface, LLMFactory
 
-class GeminiApi(LLM):
+class GeminiApi(LLMInterface):
     def __init__(self, api_key: str):
         self.api_key = api_key
         self.model = None
@@ -27,5 +26,5 @@ class GeminiFactory(LLMFactory):
     def __init__(self, api_key: str):
         self.api_key = api_key
 
-    def factory_method(self) -> LLM:
+    def factory_method(self) -> LLMInterface:
         return GeminiApi(self.api_key)
