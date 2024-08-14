@@ -1,0 +1,8 @@
+[API_KEYS]
+GEMINI_API_KEY=
+CHATGPT_API_KEY=
+
+[LOGGING]
+
+level = INFO
+format = %(asctime)s - %(levelname)s - %(message)s
