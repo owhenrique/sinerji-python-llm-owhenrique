@@ -130,6 +130,16 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 4. Envie para a branch (`git push origin feature/SuaFeature`).
 5. Crie um novo Pull Request.
 
+## Apresentação
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=WJoGCNnW29g">
+    <img src="https://img.youtube.com/vi/WJoGCNnW29g/1.jpg" alt="Apresentação">
+  </a>
+</p>
+
+ - [link para a apresentação](https://www.youtube.com/watch?v=WJoGCNnW29g)
+
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
