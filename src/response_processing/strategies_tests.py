@@ -1,5 +1,5 @@
 import pytest
-from strategy import WordCountStrategy, KeywordPresenceStrategy
+from response_processing.strategy import WordCountStrategy, KeywordPresenceStrategy
 
 class TestWordCountStrategy:
     def test_successful_evaluate(self):

@@ -31,5 +31,8 @@ class Invoker:
     def execute_commands(self):
         results = []
         for command in self._commands:
-            results.append(command.execute())
+            try:
+                results.append(command.execute())
+            except Exception as error:
+                results.append({"api_name": command.api_name, "error": str(error)})
         return results

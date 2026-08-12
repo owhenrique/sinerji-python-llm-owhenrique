@@ -40,7 +40,12 @@ def main():
 
     results = invoker.execute_commands()
 
-    subject.notify("Response processing completed.")
+    summary = ", ".join(
+        f"{result['api_name']} failed ({result['error']})" if 'error' in result
+        else f"{result['api_name']} scored {result['score']:.1f}"
+        for result in results
+    )
+    subject.notify(f"Response processing completed for {len(results)} model(s): {summary}")
 
     print_results(results)
 

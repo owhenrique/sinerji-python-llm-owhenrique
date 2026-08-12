@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from observer import Observer, ResponseObserver, Subject
+from results_presentation.observer import Observer, ResponseObserver, Subject
 
 class TestSubject:
     def test_attach_observer(self):

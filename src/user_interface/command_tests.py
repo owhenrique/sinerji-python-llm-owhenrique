@@ -69,6 +69,7 @@ class TestInvoker:
     def test_failed_execute_commands(self):
         mock_command1 = MagicMock(spec=SendPromptCommand)
         mock_command2 = MagicMock(spec=SendPromptCommand)
+        mock_command2.api_name = "TestAPI2"
 
         mock_command1.execute.return_value = {"api_name": "TestAPI1", "response": "Response1", "score": 10.0}
         mock_command2.execute.side_effect = Exception("Command Error")
@@ -77,7 +78,9 @@ class TestInvoker:
         invoker.add_command(mock_command1)
         invoker.add_command(mock_command2)
 
-        with pytest.raises(Exception) as exc_info:
-            invoker.execute_commands()
+        results = invoker.execute_commands()
 
-        assert str(exc_info.value) == "Command Error"
+        assert results == [
+            {"api_name": "TestAPI1", "response": "Response1", "score": 10.0},
+            {"api_name": "TestAPI2", "error": "Command Error"}
+        ]

@@ -40,7 +40,9 @@ class CLI:
 
     def load_config(self):
         self.config = configparser.ConfigParser()
-        self.config.read("../config.ini")
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        config_path = os.path.join(project_root, "config.ini")
+        self.config.read(config_path)
 
     def load_environment(self):
         load_dotenv()

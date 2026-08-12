@@ -41,8 +41,8 @@ Esta aplicação Python conecta-se às APIs do ChatGPT e Gemini para gerar, aval
 1. **Clone o repositório**:
 
     ```bash
-    git clone https://github.com/owhenrique/sinerji-python-llm-owhenrique
-    cd sinerji-python-llm-owhenrique
+    git clone https://github.com/owhenrique/llm-arena-owhenrique
+    cd llm-arena-owhenrique
     ```
 
 2. **Instale as dependências**:
@@ -86,7 +86,47 @@ Para enviar uma pergunta aos modelos e avaliar as respostas:
 
 ## Diagrama de Pacotes
 
-![diagrama_de_pacotes](./public/diagrama_de_pacotes.jpeg)
+```mermaid
+graph TD
+    main["main.py"]
+
+    subgraph user_interface
+        cli["cli.py"]
+        command["command.py"]
+    end
+
+    subgraph api_connection
+        factory["factory.py"]
+        api_chatgpt["api_chatgpt.py"]
+        api_gemini["api_gemini.py"]
+    end
+
+    subgraph response_processing
+        strategy["strategy.py"]
+    end
+
+    subgraph results_presentation
+        observer["observer.py"]
+    end
+
+    subgraph utils
+        result_print["result_print.py"]
+    end
+
+    main --> cli
+    main --> command
+    main --> api_chatgpt
+    main --> api_gemini
+    main --> strategy
+    main --> observer
+    main --> result_print
+
+    command --> factory
+    command --> strategy
+
+    api_chatgpt --> factory
+    api_gemini --> factory
+```
 
 ## Estrutura do Código
 

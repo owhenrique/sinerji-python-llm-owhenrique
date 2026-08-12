@@ -9,6 +9,12 @@ def print_results(results):
 
     for result in results:
         api_name = result['api_name']
+
+        if 'error' in result:
+            print("{:<20} {:<15} {:<50}".format(api_name, "ERROR", result['error']))
+            print("-" * width)
+            continue
+
         prompt = result['response']['prompt']
         response_content = result['response']['content']
         score = result['score']
